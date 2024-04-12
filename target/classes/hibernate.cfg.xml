@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3307/crud</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+
+		<!-- Hibernate Dialect for your Database -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql">true</property>
+
+		<!-- Create new tables automatically if not exists -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<mapping class="com.entities.User"></mapping>
+		<mapping class="com.entities.Roles"></mapping>
+		<mapping class="com.entities.Privileges"></mapping>
+	</session-factory>
+</hibernate-configuration>
